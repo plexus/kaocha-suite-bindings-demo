@@ -1,0 +1,11 @@
+#kaocha/v1
+{:plugins [:notifier
+           :suite.bind/per-suite-bindings]
+ :tests [{:id :suite1
+          :test-paths ["test/suite1"]
+          :bindings {suite.bind/*dyn-var* 1}}
+         {:id :suite2
+          :test-paths ["test/suite2"]
+          :bindings {suite.bind/*dyn-var* 2}}]
+ :kaocha.plugin.capture-output/capture-output? false
+ :kaocha/reporter [kaocha.report/documentation]}
